@@ -1,0 +1,91 @@
+/* src/App.css */
+
+.main {
+  margin: 0;
+  padding: 0;
+  
+  
+}
+
+.main-title{
+  margin-top: 150px;
+  font-size: 120px;
+  color: #bdab06b0;
+  border: 1px solid #cccccc61;
+  border-color: #ffd700;
+  border-radius: 8px;
+  background-color: #41403cba;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+body {
+  background-image: url('./images/bg.jpg');
+  font-family: 'Roboto Mono', monospace;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: transparent;
+  margin-top: 40px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  padding: 30px;
+  transition: color 0.3s ease-in-out;
+  
+}
+
+.nav-link:hover {
+  color: #ffd700; /* Change to the desired hover color */
+}
+
+h1 {
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.buttons-container-m {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  
+}
+
+h2 {
+  color: #302f2fd8;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.buttons-container-m .nav-button {
+  background-color: #41403cd0;
+  color: #bdab06b0;
+  padding: 40px 55px;
+  border: 1px solid #cccccc61;
+  border-color: #ffd700;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 100px;
+  margin-top: 50px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttons-container-m .nav-button:hover {
+  background-color: #191919af;
+}
