@@ -6,10 +6,10 @@ import ItemList from './components/ItemList';
 import InvoiceList from './components/InvoiceList';
 import AddItemForm from './components/AddItemForm';
 import AddInvoiceForm from './components/AddInvoiceForm';
-import EditItemForm from './components/EditItemForm'; // Import new component
-import EditInvoiceForm from './components/EditInvoiceForm'; // Import new component
+import EditItemForm from './components/EditItemForm';
+import EditInvoiceForm from './components/EditInvoiceForm';
 import Navbar from './components/Navbar';
-import './App.css'; // Import the CSS file
+import './App.css'; 
 
 const Home = () => (
   <div className='main'>
