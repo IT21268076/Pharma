@@ -7,8 +7,8 @@ This application is built using PostgreSQL for the database, Golang for the back
 
 ## Features
 
--Add, update, delete and view items.
--Create invoices with required details.
+- Add, update, delete and view items.
+- Create invoices with required details.
 
 ### Item Management
 
@@ -80,7 +80,7 @@ This application is built using PostgreSQL for the database, Golang for the back
     - There are some libraries need to run install them using go get command if error occured. -> see go.mod file.
       
    The backend server will be running at `http://localhost:8090`.
-   -Change port if needed in main.go file.
+   - Change port if needed in main.go file.
 
 ## Frontend Setup
 
@@ -112,9 +112,9 @@ This application is built using PostgreSQL for the database, Golang for the back
 
 ## Usage
 
--Manage items.
--Invoicing.
--Report generation.
+- Manage items.
+- Invoicing.
+- Report generation.
 
 
 
