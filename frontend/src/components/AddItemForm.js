@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './AddItemForm.css'; // Import the CSS file for styling
+import './AddItemForm.css'; 
 
 const AddItemForm = () => {
   const [itemName, setItemName] = useState('');
