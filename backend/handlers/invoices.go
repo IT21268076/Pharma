@@ -27,7 +27,7 @@ func NewInvoiceHandler(db *sql.DB) *InvoiceHandler {
 func (h *InvoiceHandler) GetInvoices(w http.ResponseWriter, r *http.Request) {
 	invoices := []models.Invoice{}
 
-	// Implement logic to fetch invoices from the database
+	// fetch invoices from the database
 	rows, err := h.DB.Query("SELECT id, name, mobile_no, email, address, billing_type, item_count, total_amount FROM invoices")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -60,7 +60,7 @@ func (h *InvoiceHandler) GetInvoice(w http.ResponseWriter, r *http.Request) {
 
 	invoice := models.Invoice{}
 
-	// Implement logic to fetch a specific invoice from the database
+	// fetch a specific invoice from the database
 	row := h.DB.QueryRow("SELECT id, name, mobile_no, email, address, billing_type, item_count, total_amount FROM invoices WHERE id = $1", invoiceID)
 	err = row.Scan(&invoice.ID, &invoice.Name, &invoice.MobileNo, &invoice.Email, &invoice.Address, &invoice.BillingType, &invoice.ItemCount, &invoice.TotalAmount)
 	if err != nil {
@@ -81,7 +81,7 @@ func (h *InvoiceHandler) AddInvoice(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Implement logic to add a new invoice to the database
+	// add a new invoice to the database
 	_, err = h.DB.Exec("INSERT INTO invoices (name, mobile_no, email, address, billing_type, item_count, total_amount) VALUES ($1, $2, $3, $4, $5, $6, $7)",
 		newInvoice.Name, newInvoice.MobileNo, newInvoice.Email, newInvoice.Address, newInvoice.BillingType, newInvoice.ItemCount, newInvoice.TotalAmount)
 	if err != nil {
@@ -108,7 +108,7 @@ func (h *InvoiceHandler) UpdateInvoice(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Implement logic to update an existing invoice in the database
+	// update an existing invoice in the database
 	_, err = h.DB.Exec("UPDATE invoices SET name = $1, mobile_no = $2, email = $3, address = $4, billing_type = $5, item_count = $6, total_amount = $7 WHERE id = $6",
 		updatedInvoice.Name, updatedInvoice.MobileNo, updatedInvoice.Email, updatedInvoice.Address, updatedInvoice.BillingType, updatedInvoice.ItemCount, updatedInvoice.TotalAmount, invoiceID)
 	if err != nil {
@@ -128,7 +128,7 @@ func (h *InvoiceHandler) DeleteInvoice(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Implement logic to delete a specific invoice from the database
+	// delete a specific invoice from the database
 	_, err = h.DB.Exec("DELETE FROM invoices WHERE id = $1", invoiceID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
