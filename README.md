@@ -67,6 +67,7 @@ This application is built using PostgreSQL for the database, Golang for the back
 2. Set up the PostgreSQL database:
 
     - Create a new database.
+    - Use your own connection string.
     - Run the provided SQL queries in `database/database.go` to create the required tables.
     - A pre-created sql query with dummy data is uploaded to the repo, download it and try.
 
