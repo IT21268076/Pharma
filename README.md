@@ -7,11 +7,8 @@ This application is built using PostgreSQL for the database, Golang for the back
 
 ## Features
 
-
-
-### Landing Page
-
-A visually appealing landing page showcases the UI/UX design skills with a background image and a navigation bar.
+-Add, update, delete and view items.
+-Create invoices with required details.
 
 ### Item Management
 
@@ -25,6 +22,10 @@ A visually appealing landing page showcases the UI/UX design skills with a backg
 
 3. **Delete Item:**
    - Allows users to delete items from the system.
+  
+4. **View Items:**
+   - View list of items.
+   - Generate a customized report in PDF can be download and available offline.
 
 ### Invoice Creation
 
@@ -38,10 +39,14 @@ A visually appealing landing page showcases the UI/UX design skills with a backg
 
 3. **Delete Invoice:**
    - Allows users to delete invoices.
+  
+4. **View Items:**
+   - View list of invoices.
+   - Download organized invoice seperately by see PDF button for each invoice.
 
 ### Navigation
 
-- Navigation bar without borders for easy navigation between different sections.
+- Navigation bar for easy navigation between different sections.
 
 ## Backend Setup
 
@@ -63,6 +68,7 @@ A visually appealing landing page showcases the UI/UX design skills with a backg
 
     - Create a new database.
     - Run the provided SQL queries in `database/database.go` to create the required tables.
+    - A pre-created sql query with dummy data is uploaded to the repo, download it and try.
 
 3. Set up the Go backend:
 
@@ -71,8 +77,10 @@ A visually appealing landing page showcases the UI/UX design skills with a backg
     go mod tidy
     go run main.go
     ```
-
+    - There are some libraries need to run install them using go get command if error occured. -> see go.mod file.
+      
    The backend server will be running at `http://localhost:8090`.
+   -Change port if needed in main.go file.
 
 ## Frontend Setup
 
@@ -104,13 +112,10 @@ A visually appealing landing page showcases the UI/UX design skills with a backg
 
 ## Usage
 
-Provide instructions on how to use the application, including any user interactions or workflows.
+-Manage items.
+-Invoicing.
+-Report generation.
 
-## Contributing
 
-Explain how others can contribute to the project.
 
-## License
-
-Specify the license for your project.
 
