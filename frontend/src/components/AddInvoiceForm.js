@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './AddInvoiceForm.css'; // Import the CSS file for styling
-
+import './AddInvoiceForm.css'; 
 const AddInvoiceForm = () => {
   const [invoiceName, setInvoiceName] = useState('');
   const [mobileNo, setMobileNo] = useState('');
