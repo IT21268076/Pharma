@@ -27,7 +27,7 @@ func NewItemHandler(db *sql.DB) *ItemHandler {
 func (h *ItemHandler) GetItems(w http.ResponseWriter, r *http.Request) {
 	items := []models.Item{}
 
-	// Implement logic to fetch items from the database
+	// fetch items from the database
 	rows, err := h.DB.Query("SELECT id, name, unit_price, item_category FROM items")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -60,7 +60,7 @@ func (h *ItemHandler) GetItem(w http.ResponseWriter, r *http.Request) {
 
 	item := models.Item{}
 
-	// Implement logic to fetch a specific item from the database
+	// fetch a specific item from the database
 	row := h.DB.QueryRow("SELECT id, name, unit_price, item_category FROM items WHERE id = $1", itemID)
 	err = row.Scan(&item.ID, &item.Name, &item.UnitPrice, &item.ItemCategory)
 	if err != nil {
@@ -81,7 +81,7 @@ func (h *ItemHandler) AddItem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Implement logic to add a new item to the database
+	// add a new item to the database
 	_, err = h.DB.Exec("INSERT INTO items (name, unit_price, item_category) VALUES ($1, $2, $3)",
 		newItem.Name, newItem.UnitPrice, newItem.ItemCategory)
 	if err != nil {
@@ -108,7 +108,7 @@ func (h *ItemHandler) UpdateItem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Implement logic to update an existing item in the database
+	// update an existing item in the database
 	_, err = h.DB.Exec("UPDATE items SET name = $1, unit_price = $2, item_category = $3 WHERE id = $4",
 		updatedItem.Name, updatedItem.UnitPrice, updatedItem.ItemCategory, itemID)
 	if err != nil {
@@ -128,7 +128,7 @@ func (h *ItemHandler) DeleteItem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Implement logic to delete a specific item from the database
+	// delete a specific item from the database
 	_, err = h.DB.Exec("DELETE FROM items WHERE id = $1", itemID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
